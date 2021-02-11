@@ -1,0 +1,23 @@
+name: test
+
+on: [push]
+
+jobs:
+  test:
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-2016]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: cmake
+      run: cmake .
+    - name: cmake build
+      run: cmake --build .
+    - name: ctest
+      run: ctest -C Release
+      env:
+        CTEST_OUTPUT_ON_FAILURE: 1
