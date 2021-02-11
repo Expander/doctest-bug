@@ -16,7 +16,7 @@ jobs:
     - name: cmake
       run: cmake .
     - name: cmake build
-      run: cmake --build .
+      run: cmake --build . --config Release
     - name: ctest
       run: ctest -C Release
       env:
