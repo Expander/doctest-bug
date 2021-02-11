@@ -6,4 +6,4 @@ set(CMAKE_BUILD_TYPE Release)
 enable_testing()
 
 add_executable(hangs hangs.cpp)
-add_test(NAME hangs COMMAND hangs)
+add_test(NAME test_hangs COMMAND hangs)
